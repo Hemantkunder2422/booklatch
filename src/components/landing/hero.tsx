@@ -19,9 +19,11 @@ export function Hero() {
     <section id="top" className="relative overflow-hidden pt-28 sm:pt-36">
       {/* Background layers */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-grid mask-fade-b opacity-60" />
-        <div className="bg-aurora animate-aurora absolute -top-40 left-1/2 h-[42rem] w-[80rem] -translate-x-1/2 rounded-full opacity-40 blur-3xl" />
-        <div className="absolute right-[10%] top-24 h-72 w-72 rounded-full bg-primary/20 blur-3xl" />
+        <div className="absolute inset-0 bg-brand-radial opacity-70" />
+        <div className="absolute inset-0 bg-grid mask-fade-b opacity-50" />
+        <div className="bg-aurora animate-aurora absolute -top-44 left-1/2 h-[44rem] w-[84rem] -translate-x-1/2 rounded-full opacity-50 blur-3xl" />
+        <div className="absolute right-[8%] top-20 h-72 w-72 rounded-full bg-brand-fuchsia/25 blur-3xl" />
+        <div className="absolute left-[6%] top-40 h-64 w-64 rounded-full bg-brand-teal/20 blur-3xl" />
       </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -33,7 +35,7 @@ export function Hero() {
             transition={{ duration: 0.5 }}
             className="group inline-flex items-center gap-2 rounded-full border border-border/70 bg-card/60 px-4 py-1.5 text-sm font-medium shadow-sm backdrop-blur"
           >
-            <span className="flex h-5 items-center gap-1 rounded-full bg-primary/15 px-2 text-xs font-semibold text-primary">
+            <span className="flex h-5 items-center gap-1 rounded-full bg-linear-to-r from-brand-violet to-brand-fuchsia px-2 text-xs font-semibold text-white">
               <Sparkles className="h-3 w-3" /> New
             </span>
             Smart calendars + instant payments
@@ -46,14 +48,8 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.05 }}
             className="mt-6 font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-balance sm:text-6xl lg:text-7xl"
           >
-            Run your venue from
-            <span className="relative whitespace-nowrap">
-              {" "}
-              <span className="bg-gradient-to-r from-primary via-amber-500 to-rose-500 bg-clip-text text-transparent">
-                one beautiful
-              </span>
-            </span>{" "}
-            dashboard
+            Run your venue from{" "}
+            <span className="text-gradient-brand">one beautiful</span> dashboard
           </motion.h1>
 
           <motion.p
@@ -73,9 +69,13 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.18 }}
             className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row"
           >
-            <Button size="lg" className="group h-12 rounded-full px-7 text-base shadow-lg shadow-primary/30" asChild>
+            <Button
+              size="lg"
+              className="group h-12 rounded-full bg-linear-to-r from-brand-violet via-brand-indigo to-brand-fuchsia px-7 text-base text-white shadow-lg shadow-primary/30 transition-opacity hover:opacity-95"
+              asChild
+            >
               <a href="#cta">
-                Start free — 14 days
+                Start free trial
                 <ArrowRight className="transition-transform group-hover:translate-x-1" />
               </a>
             </Button>
@@ -115,7 +115,7 @@ export function Hero() {
           style={{ perspective: 1200 }}
           className="relative mx-auto mt-16 max-w-6xl"
         >
-          <div className="absolute -inset-x-10 -top-10 bottom-0 -z-10 rounded-[2rem] bg-gradient-to-b from-primary/10 to-transparent blur-2xl" />
+          <div className="absolute -inset-x-10 -top-10 bottom-0 -z-10 rounded-[2rem] bg-linear-to-b from-primary/10 to-transparent blur-2xl" />
           <AppPreview />
         </motion.div>
 

@@ -4,7 +4,6 @@ import { LogoCloud } from "@/components/landing/logo-cloud"
 import { Features } from "@/components/landing/features"
 import { HowItWorks } from "@/components/landing/how-it-works"
 import { AnalyticsShowcase } from "@/components/landing/analytics-showcase"
-import { Pricing } from "@/components/landing/pricing"
 import { Testimonials } from "@/components/landing/testimonials"
 import { FAQ } from "@/components/landing/faq"
 import { CTA } from "@/components/landing/cta"
@@ -44,7 +43,6 @@ export default function HomePage() {
         <Features />
         <HowItWorks />
         <AnalyticsShowcase />
-        <Pricing />
         <Testimonials />
         <FAQ />
         <CTA />

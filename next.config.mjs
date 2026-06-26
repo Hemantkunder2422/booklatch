@@ -8,9 +8,6 @@ const nextConfig = {
       { protocol: 'https', hostname: 'images.unsplash.com' },
     ],
   },
-  experimental: {
-    optimizePackageImports: ['lucide-react', 'motion'],
-  },
 }
 
 export default nextConfig

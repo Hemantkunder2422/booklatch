@@ -134,7 +134,7 @@ export function AppPreview() {
               {n.label}
             </div>
           ))}
-          <div className="mt-auto rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 p-3">
+          <div className="mt-auto rounded-xl bg-linear-to-br from-primary/15 to-primary/5 p-3">
             <p className="text-xs font-medium">Pro plan</p>
             <p className="mt-1 text-[11px] text-muted-foreground">Unlimited spaces & staff</p>
           </div>
@@ -152,7 +152,7 @@ export function AppPreview() {
                 <Bell className="h-4 w-4 text-muted-foreground" />
                 <span className="absolute right-1.5 top-1.5 h-1.5 w-1.5 rounded-full bg-primary" />
               </div>
-              <div className="h-8 w-8 rounded-full bg-gradient-to-br from-primary to-rose-500" />
+              <div className="h-8 w-8 rounded-full bg-linear-to-br from-brand-violet to-brand-fuchsia" />
             </div>
           </div>
 

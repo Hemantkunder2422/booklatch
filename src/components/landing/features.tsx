@@ -108,12 +108,12 @@ export function Features() {
               >
                 <div
                   className={cn(
-                    "pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-gradient-to-br opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100",
+                    "pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-linear-to-br opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100",
                     f.accent
                   )}
                 />
                 <div className="relative">
-                  <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-border/60 bg-background/80 text-primary shadow-sm">
+                  <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-linear-to-br from-brand-violet to-brand-fuchsia text-white shadow-lg shadow-primary/25">
                     <f.icon className="h-5 w-5" />
                   </div>
                   <h3 className="mt-4 font-display text-lg font-bold tracking-tight">{f.title}</h3>

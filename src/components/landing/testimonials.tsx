@@ -63,7 +63,7 @@ const QUOTES: Quote[] = [
 
 export function Testimonials() {
   return (
-    <section className="relative py-24 sm:py-32">
+    <section id="reviews" className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="Loved by venues"
@@ -85,7 +85,7 @@ export function Testimonials() {
                 </blockquote>
                 <figcaption className="mt-5 flex items-center gap-3">
                   <span
-                    className={`grid h-10 w-10 place-items-center rounded-full bg-gradient-to-br ${q.tone} text-sm font-bold text-white`}
+                    className={`grid h-10 w-10 place-items-center rounded-full bg-linear-to-br ${q.tone} text-sm font-bold text-white`}
                   >
                     {q.initials}
                   </span>

@@ -36,7 +36,7 @@ export function HowItWorks() {
         <div className="relative mt-16 grid gap-8 md:grid-cols-3">
           <div
             aria-hidden
-            className="absolute left-0 right-0 top-9 hidden h-px bg-gradient-to-r from-transparent via-border to-transparent md:block"
+            className="absolute left-0 right-0 top-9 hidden h-px bg-linear-to-r from-transparent via-border to-transparent md:block"
           />
           {STEPS.map((s, i) => (
             <Reveal key={s.step} delay={i * 0.12}>
@@ -44,7 +44,7 @@ export function HowItWorks() {
                 <div className="mx-auto grid h-18 w-18 place-items-center">
                   <div className="relative grid h-16 w-16 place-items-center rounded-2xl border border-border/60 bg-card shadow-lg">
                     <s.icon className="h-7 w-7 text-primary" />
-                    <span className="absolute -right-2 -top-2 grid h-7 w-7 place-items-center rounded-full bg-primary text-xs font-bold text-primary-foreground shadow">
+                    <span className="absolute -right-2 -top-2 grid h-7 w-7 place-items-center rounded-full bg-linear-to-br from-brand-violet to-brand-fuchsia text-xs font-bold text-white shadow-lg shadow-primary/30">
                       {i + 1}
                     </span>
                   </div>

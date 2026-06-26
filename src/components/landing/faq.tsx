@@ -31,8 +31,8 @@ const FAQS = [
     a: "Yes. Invite staff, assign roles and shifts, and control exactly what each person can see and do across bookings, payments and settings.",
   },
   {
-    q: "Is there a free plan?",
-    a: "Yes — the Starter plan is free forever for a single space with up to 50 bookings a month. Upgrade anytime as you grow; no card required to start.",
+    q: "How much does BookLatch cost?",
+    a: "Pricing is tailored to your venue — the number of spaces, bookings and team members you have. Start with a free trial, then talk to us for a custom plan that fits how you operate. No setup fees, cancel anytime.",
   },
 ]
 
