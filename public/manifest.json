@@ -1,6 +1,7 @@
 {
-  "short_name": "TanStack App",
-  "name": "Create TanStack App Sample",
+  "short_name": "BookLatch",
+  "name": "BookLatch — Venue Management Software",
+  "description": "All-in-one venue management: bookings, payments, calendars, invoicing, staff and analytics.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -18,8 +19,8 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#c0392b",
+  "background_color": "#1a1410"
 }
