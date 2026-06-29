@@ -1,6 +1,3 @@
-"use client"
-
-import { motion } from "motion/react"
 import {
   Users,
   CalendarCheck,
@@ -15,6 +12,7 @@ import {
 } from "lucide-react"
 import { SectionHeading } from "./section-heading"
 import { Stagger, StaggerItem } from "./reveal"
+import { SpotlightCard } from "./spotlight-card"
 import { cn } from "@/lib/utils"
 
 const FEATURES = [
@@ -101,25 +99,21 @@ export function Features() {
         <Stagger className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {FEATURES.map((f) => (
             <StaggerItem key={f.title} className={cn(f.span)}>
-              <motion.div
-                whileHover={{ y: -4 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="group relative h-full overflow-hidden rounded-2xl border border-border/60 bg-card/60 p-6 backdrop-blur"
-              >
+              <SpotlightCard className="h-full">
                 <div
                   className={cn(
-                    "pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-linear-to-br opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100",
+                    "pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-linear-to-br opacity-0 blur-2xl transition-opacity duration-500 group-hover/spot:opacity-100",
                     f.accent
                   )}
                 />
-                <div className="relative">
-                  <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-linear-to-br from-brand-violet to-brand-fuchsia text-white shadow-lg shadow-primary/25">
+                <div className="relative p-6">
+                  <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-linear-to-br from-brand-violet to-brand-fuchsia text-white shadow-lg shadow-primary/25 transition-transform duration-300 group-hover/spot:scale-110">
                     <f.icon className="h-5 w-5" />
                   </div>
                   <h3 className="mt-4 font-display text-lg font-bold tracking-tight">{f.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.desc}</p>
                 </div>
-              </motion.div>
+              </SpotlightCard>
             </StaggerItem>
           ))}
         </Stagger>

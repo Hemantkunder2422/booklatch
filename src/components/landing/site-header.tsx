@@ -9,11 +9,11 @@ import { Logo } from "./logo"
 import { cn } from "@/lib/utils"
 
 const NAV = [
-  { label: "Features", href: "#features" },
-  { label: "How it works", href: "#how" },
-  { label: "Analytics", href: "#analytics" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Features", href: "/#features" },
+  { label: "Product", href: "/#tour" },
+  { label: "Analytics", href: "/#analytics" },
+  { label: "Reviews", href: "/#reviews" },
+  { label: "FAQ", href: "/#faq" },
 ]
 
 export function SiteHeader() {
@@ -37,7 +37,7 @@ export function SiteHeader() {
             : "my-3 py-3"
         )}
       >
-        <a href="#top" aria-label="BookLatch home">
+        <a href="/" aria-label="BookLatch home">
           <Logo />
         </a>
 

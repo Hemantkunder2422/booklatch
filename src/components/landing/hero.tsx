@@ -71,7 +71,7 @@ export function Hero() {
           >
             <Button
               size="lg"
-              className="group h-12 rounded-full bg-linear-to-r from-brand-violet via-brand-indigo to-brand-fuchsia px-7 text-base text-white shadow-lg shadow-primary/30 transition-opacity hover:opacity-95"
+              className="shine group h-12 rounded-full bg-linear-to-r from-brand-violet via-brand-indigo to-brand-fuchsia px-7 text-base text-white shadow-lg shadow-primary/30 transition-opacity hover:opacity-95"
               asChild
             >
               <a href="#cta">
@@ -115,8 +115,48 @@ export function Hero() {
           style={{ perspective: 1200 }}
           className="relative mx-auto mt-16 max-w-6xl"
         >
-          <div className="absolute -inset-x-10 -top-10 bottom-0 -z-10 rounded-[2rem] bg-linear-to-b from-primary/10 to-transparent blur-2xl" />
-          <AppPreview />
+          {/* Vivid aurora glow behind the product shot */}
+          <div className="bg-aurora animate-aurora absolute -inset-x-16 -top-12 bottom-6 -z-10 rounded-[3rem] opacity-40 blur-[64px]" />
+          <div className="gradient-ring rounded-2xl shadow-2xl shadow-primary/20">
+            <AppPreview />
+          </div>
+
+          {/* Floating live-product chips */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={reduce ? { opacity: 1 } : { opacity: 1, y: [0, -9, 0] }}
+            transition={{
+              opacity: { duration: 0.6, delay: 0.9 },
+              y: { duration: 5, repeat: Infinity, ease: "easeInOut" },
+            }}
+            className="absolute -left-3 top-16 hidden items-center gap-2.5 rounded-2xl border border-border/60 bg-card/90 px-3.5 py-2.5 shadow-xl backdrop-blur sm:flex lg:-left-8"
+          >
+            <span className="grid h-8 w-8 place-items-center rounded-xl bg-emerald-500/15 text-emerald-500">
+              <CreditCard className="h-4 w-4" />
+            </span>
+            <span className="text-left">
+              <span className="block text-[11px] text-muted-foreground">Payment received</span>
+              <span className="block text-sm font-bold">+ $2,400</span>
+            </span>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={reduce ? { opacity: 1 } : { opacity: 1, y: [0, 9, 0] }}
+            transition={{
+              opacity: { duration: 0.6, delay: 1.1 },
+              y: { duration: 5.5, repeat: Infinity, ease: "easeInOut" },
+            }}
+            className="absolute -right-3 bottom-16 hidden items-center gap-2.5 rounded-2xl border border-border/60 bg-card/90 px-3.5 py-2.5 shadow-xl backdrop-blur sm:flex lg:-right-8"
+          >
+            <span className="grid h-8 w-8 place-items-center rounded-xl bg-primary/15 text-primary">
+              <CalendarCheck className="h-4 w-4" />
+            </span>
+            <span className="text-left">
+              <span className="block text-[11px] text-muted-foreground">New booking</span>
+              <span className="block text-sm font-bold">Grand Hall · Confirmed</span>
+            </span>
+          </motion.div>
         </motion.div>
 
         {/* Stats */}

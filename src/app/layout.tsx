@@ -3,6 +3,7 @@ import { Inter, Plus_Jakarta_Sans } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/sonner"
+import { siteConfig } from "@/lib/site"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -17,51 +18,76 @@ const display = Plus_Jakarta_Sans({
   weight: ["500", "600", "700", "800"],
 })
 
-const SITE_URL = "https://booklatch.com"
-
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "BookLatch — Venue Management Software for Modern Venues",
+    default: siteConfig.title,
     template: "%s · BookLatch",
   },
-  description:
-    "BookLatch is the all-in-one venue management platform. Track customers, confirm bookings, take payments, manage calendars and spaces, send invoices, run your team and grow revenue — beautifully.",
+  description: siteConfig.description,
   keywords: [
+    "BookLatch",
     "venue management software",
     "booking management system",
     "event space booking",
-    "venue scheduling",
+    "venue scheduling software",
     "venue CRM",
     "venue invoicing",
     "booking calendar software",
   ],
-  authors: [{ name: "BookLatch" }],
+  authors: [{ name: "BookLatch", url: siteConfig.url }],
   creator: "BookLatch",
+  publisher: "BookLatch",
   applicationName: "BookLatch",
+  category: "technology",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    url: SITE_URL,
+    url: siteConfig.url,
     siteName: "BookLatch",
-    title: "BookLatch — Venue Management Software for Modern Venues",
+    title: siteConfig.title,
     description:
       "Run your entire venue from one beautiful dashboard: bookings, payments, calendars, invoicing, staff and analytics.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "BookLatch" }],
   },
   twitter: {
     card: "summary_large_image",
+    site: "@booklatch",
+    creator: "@booklatch",
     title: "BookLatch — Venue Management Software",
     description:
       "Run your entire venue from one beautiful dashboard: bookings, payments, calendars, invoicing, staff and analytics.",
-    images: ["/og.png"],
+  },
+  appleWebApp: {
+    capable: true,
+    title: "BookLatch",
+    statusBarStyle: "black-translucent",
   },
   icons: {
     icon: "/favicon.ico",
     apple: "/logo192.png",
   },
   manifest: "/manifest.json",
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  verification: {
+    // Paste the token Google Search Console gives you (or set GOOGLE_SITE_VERIFICATION).
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+    other: {
+      // Meta Business Manager → Brand Safety → Domains → "Add a meta-tag".
+      // Paste the code into NEXT_PUBLIC_FACEBOOK_DOMAIN_VERIFICATION.
+      "facebook-domain-verification":
+        process.env.NEXT_PUBLIC_FACEBOOK_DOMAIN_VERIFICATION ?? "",
+    },
+  },
 }
 
 export const viewport: Viewport = {
@@ -79,7 +105,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${display.variable}`}>
+    <html
+      lang="en"
+      data-scroll-behavior="smooth"
+      suppressHydrationWarning
+      className={`${inter.variable} ${display.variable}`}
+    >
       <body className="font-sans antialiased">
         <ThemeProvider
           attribute="class"
@@ -87,7 +118,18 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <a
+            href="#content"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
+          >
+            Skip to content
+          </a>
           {children}
+          {/* Film grain — subtle texture that removes gradient banding */}
+          <div
+            aria-hidden
+            className="bg-noise pointer-events-none fixed inset-0 z-[60] opacity-[0.04] mix-blend-soft-light dark:opacity-[0.06]"
+          />
           <Toaster richColors position="top-center" />
         </ThemeProvider>
       </body>
