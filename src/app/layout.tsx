@@ -81,6 +81,12 @@ export const metadata: Metadata = {
   verification: {
     // Paste the token Google Search Console gives you (or set GOOGLE_SITE_VERIFICATION).
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+    other: {
+      // Meta Business Manager → Brand Safety → Domains → "Add a meta-tag".
+      // Paste the code into NEXT_PUBLIC_FACEBOOK_DOMAIN_VERIFICATION.
+      "facebook-domain-verification":
+        process.env.NEXT_PUBLIC_FACEBOOK_DOMAIN_VERIFICATION ?? "",
+    },
   },
 }
 

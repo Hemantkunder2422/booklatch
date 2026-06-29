@@ -2,6 +2,7 @@ import { SiteHeader } from "@/components/landing/site-header"
 import { Hero } from "@/components/landing/hero"
 import { LogoCloud } from "@/components/landing/logo-cloud"
 import { Features } from "@/components/landing/features"
+import { ProductTour } from "@/components/landing/product-tour"
 import { HowItWorks } from "@/components/landing/how-it-works"
 import { AnalyticsShowcase } from "@/components/landing/analytics-showcase"
 import { Testimonials } from "@/components/landing/testimonials"
@@ -70,6 +71,7 @@ export default function HomePage() {
         <Hero />
         <LogoCloud />
         <Features />
+        <ProductTour />
         <HowItWorks />
         <AnalyticsShowcase />
         <Testimonials />

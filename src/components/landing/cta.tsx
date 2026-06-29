@@ -118,7 +118,7 @@ export function CTA() {
           </form>
           <p className="mt-4 text-xs text-muted-foreground">
             Free trial · Custom pricing built around your venue ·{" "}
-            <a href="#cta" className="font-medium text-primary hover:underline">
+            <a href="/contact" className="font-medium text-primary hover:underline">
               Talk to our team
             </a>
           </p>

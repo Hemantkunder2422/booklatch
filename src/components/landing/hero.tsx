@@ -120,6 +120,43 @@ export function Hero() {
           <div className="gradient-ring rounded-2xl shadow-2xl shadow-primary/20">
             <AppPreview />
           </div>
+
+          {/* Floating live-product chips */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={reduce ? { opacity: 1 } : { opacity: 1, y: [0, -9, 0] }}
+            transition={{
+              opacity: { duration: 0.6, delay: 0.9 },
+              y: { duration: 5, repeat: Infinity, ease: "easeInOut" },
+            }}
+            className="absolute -left-3 top-16 hidden items-center gap-2.5 rounded-2xl border border-border/60 bg-card/90 px-3.5 py-2.5 shadow-xl backdrop-blur sm:flex lg:-left-8"
+          >
+            <span className="grid h-8 w-8 place-items-center rounded-xl bg-emerald-500/15 text-emerald-500">
+              <CreditCard className="h-4 w-4" />
+            </span>
+            <span className="text-left">
+              <span className="block text-[11px] text-muted-foreground">Payment received</span>
+              <span className="block text-sm font-bold">+ $2,400</span>
+            </span>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={reduce ? { opacity: 1 } : { opacity: 1, y: [0, 9, 0] }}
+            transition={{
+              opacity: { duration: 0.6, delay: 1.1 },
+              y: { duration: 5.5, repeat: Infinity, ease: "easeInOut" },
+            }}
+            className="absolute -right-3 bottom-16 hidden items-center gap-2.5 rounded-2xl border border-border/60 bg-card/90 px-3.5 py-2.5 shadow-xl backdrop-blur sm:flex lg:-right-8"
+          >
+            <span className="grid h-8 w-8 place-items-center rounded-xl bg-primary/15 text-primary">
+              <CalendarCheck className="h-4 w-4" />
+            </span>
+            <span className="text-left">
+              <span className="block text-[11px] text-muted-foreground">New booking</span>
+              <span className="block text-sm font-bold">Grand Hall · Confirmed</span>
+            </span>
+          </motion.div>
         </motion.div>
 
         {/* Stats */}
