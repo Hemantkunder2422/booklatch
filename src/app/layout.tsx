@@ -88,6 +88,11 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          {/* Film grain — subtle texture that removes gradient banding */}
+          <div
+            aria-hidden
+            className="bg-noise pointer-events-none fixed inset-0 z-[60] opacity-[0.04] mix-blend-soft-light dark:opacity-[0.06]"
+          />
           <Toaster richColors position="top-center" />
         </ThemeProvider>
       </body>

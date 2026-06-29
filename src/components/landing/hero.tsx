@@ -71,7 +71,7 @@ export function Hero() {
           >
             <Button
               size="lg"
-              className="group h-12 rounded-full bg-linear-to-r from-brand-violet via-brand-indigo to-brand-fuchsia px-7 text-base text-white shadow-lg shadow-primary/30 transition-opacity hover:opacity-95"
+              className="shine group h-12 rounded-full bg-linear-to-r from-brand-violet via-brand-indigo to-brand-fuchsia px-7 text-base text-white shadow-lg shadow-primary/30 transition-opacity hover:opacity-95"
               asChild
             >
               <a href="#cta">
@@ -115,8 +115,11 @@ export function Hero() {
           style={{ perspective: 1200 }}
           className="relative mx-auto mt-16 max-w-6xl"
         >
-          <div className="absolute -inset-x-10 -top-10 bottom-0 -z-10 rounded-[2rem] bg-linear-to-b from-primary/10 to-transparent blur-2xl" />
-          <AppPreview />
+          {/* Vivid aurora glow behind the product shot */}
+          <div className="bg-aurora animate-aurora absolute -inset-x-16 -top-12 bottom-6 -z-10 rounded-[3rem] opacity-40 blur-[64px]" />
+          <div className="gradient-ring rounded-2xl shadow-2xl shadow-primary/20">
+            <AppPreview />
+          </div>
         </motion.div>
 
         {/* Stats */}
