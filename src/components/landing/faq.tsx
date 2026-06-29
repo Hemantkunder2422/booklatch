@@ -9,7 +9,7 @@ import {
 import { SectionHeading } from "./section-heading"
 import { Reveal } from "./reveal"
 
-const FAQS = [
+export const FAQS = [
   {
     q: "How long does it take to get set up?",
     a: "Most venues are live the same day. Add your spaces, set pricing rules and connect payments — there's no migration or training required.",
